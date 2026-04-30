@@ -1,0 +1,22 @@
+[project]
+name = "srv-cu02-monitoring"
+version = "0.1.0"
+description = "Microservicio para el Caso de Uso 2: Monitoreo Proactivo y Ejecución de Alertas"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "psycopg[binary]",
+    "httpx",
+    "apscheduler",
+    "shared-kernel",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest",
+    "pytest-asyncio",
+]
+sources = { "shared-kernel" = { path = "../lib-shared-kernel" } }

@@ -1,6 +1,6 @@
 from __future__ import annotations
 from fastapi import APIRouter
-from app.runner.engine import run_pending_checks
+from cu02_app.runner.engine import run_pending_checks
 
 router = APIRouter()
 
@@ -17,7 +17,7 @@ def get_status():
     """
     Devuelve el estado del planificador.
     """
-    from app.runner.engine import scheduler
+    from cu02_app.runner.engine import scheduler
     return {
         "is_running": scheduler.running,
         "jobs": [str(job) for job in scheduler.get_jobs()]

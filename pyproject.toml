@@ -14,9 +14,12 @@ dependencies = [
     "shared-kernel",
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "pytest",
     "pytest-asyncio",
 ]
-sources = { "shared-kernel" = { path = "../lib-shared-kernel" } }
+
+[tool.uv]
+package = false
+sources = { "shared-kernel" = { git = "https://github.com/JagaScripts/pry-jupiter-phising-detect-lib-shared-kernel.git", branch = "develop" } }

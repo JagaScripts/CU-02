@@ -2,8 +2,8 @@ from __future__ import annotations
 import logging
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from app.api import monitoring
-from app.runner.engine import start_scheduler, stop_scheduler
+from cu02_app.api import monitoring
+from cu02_app.runner.engine import start_scheduler, stop_scheduler
 from shared_kernel.logging import setup_logging
 
 @asynccontextmanager

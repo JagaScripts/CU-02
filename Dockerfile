@@ -24,11 +24,11 @@ WORKDIR /app
 # Copiar el entorno virtual y el código
 COPY --from=builder /app/.venv /app/.venv
 COPY services/lib-shared-kernel /services/lib-shared-kernel
-COPY services/CU-02/app /app/app
+COPY services/CU-02/cu02_app /app/cu02_app
 
 ENV PATH="/app/.venv/bin:$PATH" \
     PYTHONPATH="/app:/services/lib-shared-kernel"
 
 EXPOSE 8003
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8003"]
+CMD ["uvicorn", "cu02_app.main:app", "--host", "0.0.0.0", "--port", "8003"]
